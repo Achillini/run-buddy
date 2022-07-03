@@ -18,6 +18,15 @@ header {
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
+  position: sticky;
+  top: 0;
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+  background-image: url('../images/hero-bg.jpg');
+  background-size: cover;
+  background-position: 80%;
+  background-attachment: fixed;
 }
 
 header h1 {
@@ -89,11 +98,12 @@ section {
 .hero {
   background-image: url('../images/hero-bg.jpg');
   background-size: cover;
-  background-position: center;
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
-  align-items:flex-start
+  align-items: flex-start;
+  background-position: 80%;
+  background-attachment: fixed;
 }
 
 .hero-cta {
@@ -194,11 +204,14 @@ section {
   margin: 50px auto;
   padding-bottom: 50px;
   width: 80%;
-  border-bottom: 1px solid #39a6b2;
   display: flex;
   flex-wrap: wrap;
   align-items: center;
   justify-content: space-between;
+}
+
+.step:last-child {
+  border-bottom: 1px solid #39a6b2;
 }
 
 .step h3 {
@@ -363,35 +376,37 @@ section {
 
 /* MEDIA QUERY FOR SMALLER DESKTOP SCREENS AND SMALLER */
 @media screen and (max-width: 980px) {
- 
-
+  header {
+    padding-bottom: 0;
+    justify-content: center;
+    position: relative
   }
 
-  @media screen and (max-width: 980px) {
-    header {
-      padding-bottom: 0;
-      justify-content: center;
-    }
-  
-    header h1 {
-      width: 100%;
-      text-align: center;
-    }
-  
-    header nav ul {
-      margin-top: 20px;
-      width: 100%;
-      justify-content: center;
-    }
-  
-    header nav ul li a {
-      font-size: 20px;
-    }
-  
-    footer h2, footer div {
-      text-align: center;
-      width: 100%;
-    }
+  header h1 {
+    width: 100%;
+    text-align: center;
+  }
+
+  header nav ul {
+    margin-top: 20px;
+    width: 100%;
+    justify-content: center;
+  }
+
+  header nav ul li a {
+    font-size: 20px;
+  }
+
+  header nav ul li a:hover {
+    background: #fce138;
+    color: #024e76;
+    border-radius: 15px;
+    text-shadow: none;
+  }
+
+  footer h2, footer div {
+    text-align: center;
+    width: 100%;
   }
 
   .hero-cta, .hero-form {
@@ -413,71 +428,135 @@ section {
   .contact-info iframe{
     flex: 1 100%;
   }
+}
 
-  @media screen and (max-width: 768px) {
-    section {
-      padding: 30px 15px;
-    }
+/* MEDIA QUERY FOR TABLETS AND SMALLER */
+@media screen and (max-width: 768px) {
+  section {
+    padding: 30px 15px;
   }
 
-  @media screen and (max-width: 768px) {
-
-    section {
-      padding: 30px 15px;
-    }
-  
-    .step h3 {
-      flex: 1 100%;
-      text-align: center;
-    }
-  
-    .step-info {
-      flex: 2 100%;
-      text-align: center;
-      justify-content: center;
-    }
-  
-    .step-img {
-      flex: 0 32%;
-      margin-right: 0;
-      margin-top: 15px;
-      margin-bottom: 15px;
-    }
-  
-    .step-text {
-      flex: 100%;  
-    }
-  
+  .step h3 {
+    flex: 1 100%;
+    text-align: center;
   }
 
-  @media screen and (max-width: 575px) {
+  .step-info {
+    flex: 2 100%;
+    text-align: center;
+    justify-content: center;
+  }
 
-    .hero-form button {
-      width: 100%;
-    }
-  
-    .section-title {
-      width: 95%;
-    }
-  
-    .intro p {
-      width: 100%;
-    }
-  
-    .trainer {
-      flex: 0 100%;
-    }
-  
-    .contact-info {
-      text-align: center;
-    }
-  
-    .contact-info > * {
-      flex: 0 100%;
-    }
+  .step-img {
+    flex: 0 32%;
+    margin-right: 0;
+    margin-top: 15px;
+    margin-bottom: 15px;
+  }
+
+  .step-text {
+    flex: 100%;  
+  }
+}
+
+/* MEDIA QUERY FOR MOBILE PHONES AND SMALLER */
+@media screen and (max-width: 575px) {
+  .hero-form button {
+    width: 100%;
+  }
+
+  .hero-form button:hover {
+    background-color: #39a6b2;  
+  }
+
+  .section-title {
+    width: 95%;
+  }
+
+  .intro p {
+    width: 100%;
+  }
+
+  .trainer {
+    flex: 0 100%;
+  }
+
+  .contact-info {
+    text-align: center;
+  }
+
+  .contact-info > * {
+    flex: 0 100%;
   }
 
   .contact-form {
     order: 3;
   }
+}
+
+header h1 {
+  /* add alongside your existing declarations */
+  text-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+header nav ul li a {
+  /* and here */
+  text-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+.hero-cta h2 {
+  /* and here */
+  text-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+.hero-form {
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  background-color: rgba(252, 225, 56, 0.8)
+
+}
+
+.hero-form {
+  border-radius: 15px;
+}
+
+.form-input {
+  border-radius: 10px;
+  background-color: rgba(255,255,255, 0.75);
+}
+
+.form-input:focus {
+  background-color: rgba(255,255,255, 1);
+  outline: none;
+}
+
+.hero-form button {
+  border-radius: 10px;
+
+}
+
+.contact-form input, .contact-form textarea {
+  border-radius: 10px;
+  
+}
+
+.contact-form input:focus {
+  background-color: rgba(255,255,255, 1);
+  outline: none;
+}
+
+.contact-form textarea:focus {
+  background-color: rgba(255,255,255, 1);
+  outline: none;
+}
+
+
+.contact-form button {
+  border-radius: 10px;
+  
+}
+
+.contact-form button:hover {
+  color: #fce138;
+  background: #39a6b2;
+}
 
